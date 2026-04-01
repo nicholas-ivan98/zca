@@ -1,4 +1,5 @@
 import { apiFactory } from "../utils.js";
+import type { API } from "../zalo.js";
 
 export type GetAliasResponse = {
     userId: string;
@@ -10,10 +11,20 @@ type AliasCacheItem = {
     alias: string;
 };
 
-const CACHE_REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+const CACHE_REFRESH_INTERVAL = 5 * 60 * 1000;
+
+export const aliasCacheUpdater = new WeakMap<API, (userId: string, alias: string | null) => void>();
 
 export const getAliasFactory = apiFactory<GetAliasResponse>()((api, ctx, utils) => {
     const cache = new Map<string, AliasCacheItem>();
+
+    aliasCacheUpdater.set(api, (userId, alias) => {
+        if (alias) {
+            cache.set(userId, { userId, alias });
+        } else {
+            cache.delete(userId);
+        }
+    });
 
     async function fetchAllAliases(page: number = 1, count: number = 100): Promise<AliasCacheItem[]> {
         const result = await api.getAliasList(count, page);
@@ -36,10 +47,8 @@ export const getAliasFactory = apiFactory<GetAliasResponse>()((api, ctx, utils) 
         }
     }
 
-    // Initial cache load on API instantiation
     void refreshCache();
 
-    // Periodic cache refresh every 5 minutes
     const timer = setInterval(refreshCache, CACHE_REFRESH_INTERVAL);
     (timer as NodeJS.Timeout & { unref?: () => void }).unref?.();
 

@@ -17,6 +17,7 @@ export type { BlockUserResponse } from "./apis/blockUser.js";
 export type { BlockViewFeedResponse } from "./apis/blockViewFeed.js";
 export type { ChangeAccountAvatarResponse } from "./apis/changeAccountAvatar.js";
 export type { ChangeFriendAliasResponse } from "./apis/changeFriendAlias.js";
+export type { ChangeAliasResponse } from "./apis/changeAlias.js";
 export type { ChangeGroupAvatarResponse } from "./apis/changeGroupAvatar.js";
 export type { ChangeGroupNameResponse } from "./apis/changeGroupName.js";
 export type { ChangeGroupOwnerResponse } from "./apis/changeGroupOwner.js";

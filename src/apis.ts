@@ -12,6 +12,7 @@ import { blockUserFactory } from "./apis/blockUser.js";
 import { blockViewFeedFactory } from "./apis/blockViewFeed.js";
 import { changeAccountAvatarFactory } from "./apis/changeAccountAvatar.js";
 import { changeFriendAliasFactory } from "./apis/changeFriendAlias.js";
+import { changeAliasFactory } from "./apis/changeAlias.js";
 import { changeGroupAvatarFactory } from "./apis/changeGroupAvatar.js";
 import { changeGroupNameFactory } from "./apis/changeGroupName.js";
 import { changeGroupOwnerFactory } from "./apis/changeGroupOwner.js";
@@ -165,6 +166,7 @@ export class API {
     public blockViewFeed: ReturnType<typeof blockViewFeedFactory>;
     public changeAccountAvatar: ReturnType<typeof changeAccountAvatarFactory>;
     public changeFriendAlias: ReturnType<typeof changeFriendAliasFactory>;
+    public changeAlias: ReturnType<typeof changeAliasFactory>;
     public changeGroupAvatar: ReturnType<typeof changeGroupAvatarFactory>;
     public changeGroupName: ReturnType<typeof changeGroupNameFactory>;
     public changeGroupOwner: ReturnType<typeof changeGroupOwnerFactory>;
@@ -318,6 +320,7 @@ export class API {
         this.blockViewFeed = blockViewFeedFactory(ctx, this);
         this.changeAccountAvatar = changeAccountAvatarFactory(ctx, this);
         this.changeFriendAlias = changeFriendAliasFactory(ctx, this);
+        this.changeAlias = changeAliasFactory(ctx, this);
         this.changeGroupAvatar = changeGroupAvatarFactory(ctx, this);
         this.changeGroupName = changeGroupNameFactory(ctx, this);
         this.changeGroupOwner = changeGroupOwnerFactory(ctx, this);

@@ -36,11 +36,13 @@ if (!isValidCredentials) {
     fs.writeFileSync(credentialsPath, JSON.stringify(credentials, null, 2), "utf-8");
 }
 
-const myProfile = await api.fetchAccountInfo();
-console.log("My profile:", myProfile);
+// const myProfile = await api.fetchAccountInfo();
+// console.log("My profile:", myProfile);
 
-const aliasList = await api.getAliasList();
-console.log("Alias list:", aliasList);
+// const aliasList = await api.getAliasList();
+// console.log("Alias list:", aliasList);
 
-const alias = await api.getAlias(myProfile.id);
-console.log("My alias:", alias);
+// setTimeout(async () => {
+//     const alias = await api.getAlias("8780300047720658810");
+//     console.log("My alias:", alias);
+// }, 2000);

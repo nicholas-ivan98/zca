@@ -28,6 +28,8 @@ export const changeFriendAliasFactory = apiFactory<ChangeFriendAliasResponse>()(
             method: "GET",
         });
 
+        aliasCacheUpdater.get(api)?.(friendId, alias || null);
+
         return utils.resolve(response);
     };
 });

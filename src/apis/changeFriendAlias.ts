@@ -1,5 +1,6 @@
 import { ZaloApiError } from "../Errors/ZaloApiError.js";
 import { apiFactory } from "../utils.js";
+import { aliasCacheUpdater } from "./getAlias.js";
 
 export type ChangeFriendAliasResponse = "";
 

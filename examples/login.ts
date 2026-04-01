@@ -38,3 +38,9 @@ if (!isValidCredentials) {
 
 const myProfile = await api.fetchAccountInfo();
 console.log("My profile:", myProfile);
+
+const aliasList = await api.getAliasList();
+console.log("Alias list:", aliasList);
+
+const alias = await api.getAlias(myProfile.id);
+console.log("My alias:", alias);

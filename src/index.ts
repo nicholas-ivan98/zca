@@ -44,6 +44,7 @@ export type { FindUserResponse } from "./apis/findUser.js";
 export type { FindUserByUsernameResponse } from "./apis/findUserByUsername.js";
 export type { ForwardMessageSuccess, ForwardMessageFail, ForwardMessagePayload, ForwardMessageResponse } from "./apis/forwardMessage.js";
 export type { GetAliasListResponse } from "./apis/getAliasList.js";
+export type { GetAliasResponse } from "./apis/getAlias.js";
 export type { GetAllFriendsResponse } from "./apis/getAllFriends.js";
 export type { GetAllGroupsResponse } from "./apis/getAllGroups.js";
 export type { GetArchivedChatListResponse } from "./apis/getArchivedChatList.js";

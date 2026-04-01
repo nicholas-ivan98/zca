@@ -39,6 +39,7 @@ import { findUserFactory } from "./apis/findUser.js";
 import { findUserByUsernameFactory } from "./apis/findUserByUsername.js";
 import { forwardMessageFactory } from "./apis/forwardMessage.js";
 import { getAliasListFactory } from "./apis/getAliasList.js";
+import { getAliasFactory } from "./apis/getAlias.js";
 import { getAllFriendsFactory } from "./apis/getAllFriends.js";
 import { getAllGroupsFactory } from "./apis/getAllGroups.js";
 import { getArchivedChatListFactory } from "./apis/getArchivedChatList.js";
@@ -191,6 +192,7 @@ export class API {
     public findUserByUsername: ReturnType<typeof findUserByUsernameFactory>;
     public forwardMessage: ReturnType<typeof forwardMessageFactory>;
     public getAliasList: ReturnType<typeof getAliasListFactory>;
+    public getAlias: ReturnType<typeof getAliasFactory>;
     public getAllFriends: ReturnType<typeof getAllFriendsFactory>;
     public getAllGroups: ReturnType<typeof getAllGroupsFactory>;
     public getArchivedChatList: ReturnType<typeof getArchivedChatListFactory>;
@@ -343,6 +345,7 @@ export class API {
         this.findUserByUsername = findUserByUsernameFactory(ctx, this);
         this.forwardMessage = forwardMessageFactory(ctx, this);
         this.getAliasList = getAliasListFactory(ctx, this);
+        this.getAlias = getAliasFactory(ctx, this);
         this.getAllFriends = getAllFriendsFactory(ctx, this);
         this.getAllGroups = getAllGroupsFactory(ctx, this);
         this.getArchivedChatList = getArchivedChatListFactory(ctx, this);

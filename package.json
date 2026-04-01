@@ -20,8 +20,7 @@
         "test:feat": "bun run test/feat.ts",
         "prettier": "prettier --write .",
         "lint": "eslint .",
-        "lint:fix": "eslint . --fix",
-        "prepare": "husky"
+        "lint:fix": "eslint . --fix"
     },
     "repository": {
         "type": "git",
